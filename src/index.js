@@ -5,9 +5,7 @@ const port = process.env.PORT || 3000
 app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 
-app.get('/',(req,res) => {
-    res.send('<h1>Sevidor rodando</h1>')
-})
+require('./controllers/authController')(app)
 
 
 app.listen(port,(e) => {
